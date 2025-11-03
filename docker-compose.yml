@@ -1,0 +1,14 @@
+services:
+  db:
+    image: mysql:8
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root       # senha do root
+      MYSQL_DATABASE: meubanco       # nome do banco que será criado
+      MYSQL_USER: user                # opcional: criar outro usuário
+      MYSQL_PASSWORD: userpassword    # senha do usuário
+    ports:
+      - "3306:3306"                  # expõe a porta para o host
+    volumes:
+      - ./mysql_data:/var/lib/mysql  # mantém os dados persistentes
