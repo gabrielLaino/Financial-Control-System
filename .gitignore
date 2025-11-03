@@ -2,3 +2,5 @@ mysql_data
 node_modules
 .env
 dist
+/generated/prisma
+generated
